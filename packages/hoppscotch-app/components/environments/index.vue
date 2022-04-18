@@ -6,7 +6,12 @@
           <span
             v-tippy="{ theme: 'tooltip' }"
             :title="`${$t('environment.select')}`"
-            class="flex-1 bg-transparent border-b border-dividerLight select-wrapper"
+            class="
+              flex-1
+              bg-transparent
+              border-b border-dividerLight
+              select-wrapper
+            "
           >
             <ButtonSecondary
               v-if="selectedEnvironmentIndex !== -1"
@@ -92,7 +97,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/blockchain.svg`"
+        :src="`./images/states/${$colorMode.value}/blockchain.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${$t('empty.environments')}`"

@@ -7,9 +7,16 @@
           class="flex flex-col items-center justify-center"
         >
           <img
-            :src="`/images/states/${$colorMode.value}/login.svg`"
+            :src="`./images/states/${$colorMode.value}/login.svg`"
             loading="lazy"
-            class="inline-flex flex-col object-contain object-center w-24 h-24 my-4"
+            class="
+              inline-flex
+              flex-col
+              object-contain object-center
+              w-24
+              h-24
+              my-4
+            "
             :alt="`${t('empty.parameters')}`"
           />
           <p class="pb-4 text-center text-secondaryLight">

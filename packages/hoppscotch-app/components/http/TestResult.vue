@@ -9,7 +9,18 @@
       "
     >
       <div
-        class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-lowerSecondaryStickyFold"
+        class="
+          sticky
+          z-10
+          flex
+          items-center
+          justify-between
+          pl-4
+          border-b
+          bg-primary
+          border-dividerLight
+          top-lowerSecondaryStickyFold
+        "
       >
         <label class="font-semibold text-secondaryLight">
           {{ t("test.report") }}
@@ -25,10 +36,28 @@
         <div v-if="haveEnvVariables" class="flex flex-col">
           <details class="flex flex-col divide-y divide-dividerLight" open>
             <summary
-              class="flex items-center justify-between flex-1 min-w-0 cursor-pointer transition focus:outline-none text-secondaryLight text-tiny group"
+              class="
+                flex
+                items-center
+                justify-between
+                flex-1
+                min-w-0
+                cursor-pointer
+                transition
+                focus:outline-none
+                text-secondaryLight text-tiny
+                group
+              "
             >
               <span
-                class="px-4 py-2 truncate transition group-hover:text-secondary capitalize-first"
+                class="
+                  px-4
+                  py-2
+                  truncate
+                  transition
+                  group-hover:text-secondary
+                  capitalize-first
+                "
               >
                 {{ t("environment.title") }}
               </span>
@@ -142,7 +171,7 @@
       class="flex flex-col items-center justify-center flex-1 p-4"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/youre_lost.svg`"
+        :src="`./images/states/${$colorMode.value}/youre_lost.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-32 h-32 my-4"
         :alt="`${t('error.test_script_fail')}`"
@@ -161,7 +190,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/validation.svg`"
+        :src="`./images/states/${$colorMode.value}/validation.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${t('empty.tests')}`"

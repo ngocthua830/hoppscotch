@@ -1,7 +1,19 @@
 <template>
   <div class="flex flex-col flex-1">
     <div
-      class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperMobileSecondaryStickyFold sm:top-upperSecondaryStickyFold"
+      class="
+        sticky
+        z-10
+        flex
+        items-center
+        justify-between
+        pl-4
+        border-b
+        bg-primary
+        border-dividerLight
+        top-upperMobileSecondaryStickyFold
+        sm:top-upperSecondaryStickyFold
+      "
     >
       <span class="flex items-center">
         <label class="font-semibold text-secondaryLight">
@@ -80,7 +92,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/upload_single_file.svg`"
+        :src="`./images/states/${$colorMode.value}/upload_single_file.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${$t('empty.body')}`"

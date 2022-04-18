@@ -1,7 +1,19 @@
 <template>
   <div class="flex flex-col flex-1">
     <div
-      class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperMobileSecondaryStickyFold sm:top-upperSecondaryStickyFold"
+      class="
+        sticky
+        z-10
+        flex
+        items-center
+        justify-between
+        pl-4
+        border-b
+        bg-primary
+        border-dividerLight
+        top-upperMobileSecondaryStickyFold
+        sm:top-upperSecondaryStickyFold
+      "
     >
       <span class="flex items-center">
         <label class="font-semibold text-secondaryLight">
@@ -134,7 +146,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/login.svg`"
+        :src="`./images/states/${$colorMode.value}/login.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${$t('empty.authorization')}`"
@@ -240,7 +252,17 @@
         </div>
       </div>
       <div
-        class="sticky h-full p-4 overflow-auto bg-primary top-upperTertiaryStickyFold min-w-46 max-w-1/3 z-9"
+        class="
+          sticky
+          h-full
+          p-4
+          overflow-auto
+          bg-primary
+          top-upperTertiaryStickyFold
+          min-w-46
+          max-w-1/3
+          z-9
+        "
       >
         <div class="pb-2 text-secondaryLight">
           {{ $t("helpers.authorization") }}

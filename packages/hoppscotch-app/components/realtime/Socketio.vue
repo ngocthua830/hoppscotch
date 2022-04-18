@@ -2,7 +2,17 @@
   <AppPaneLayout>
     <template #primary>
       <div
-        class="sticky top-0 z-10 flex flex-shrink-0 p-4 overflow-x-auto space-x-2 bg-primary hide-scrollbar"
+        class="
+          sticky
+          top-0
+          z-10
+          flex flex-shrink-0
+          p-4
+          overflow-x-auto
+          space-x-2
+          bg-primary
+          hide-scrollbar
+        "
       >
         <div class="inline-flex flex-1 space-x-2">
           <div class="flex flex-1">
@@ -20,7 +30,19 @@
                       id="client-version"
                       v-tippy="{ theme: 'tooltip' }"
                       title="socket.io-client version"
-                      class="flex px-4 py-2 font-semibold border rounded-l cursor-pointer bg-primaryLight border-divider text-secondaryDark w-26"
+                      class="
+                        flex
+                        px-4
+                        py-2
+                        font-semibold
+                        border
+                        rounded-l
+                        cursor-pointer
+                        bg-primaryLight
+                        border-divider
+                        text-secondaryDark
+                        w-26
+                      "
                       :value="`Client ${clientVersion}`"
                       readonly
                       :disabled="connectionState"
@@ -44,7 +66,16 @@
               autocomplete="off"
               spellcheck="false"
               :class="{ error: !urlValid }"
-              class="flex flex-1 w-full px-4 py-2 border bg-primaryLight border-divider text-secondaryDark"
+              class="
+                flex flex-1
+                w-full
+                px-4
+                py-2
+                border
+                bg-primaryLight
+                border-divider
+                text-secondaryDark
+              "
               :placeholder="$t('socketio.url')"
               :disabled="connectionState"
               @keyup.enter="urlValid ? toggleConnection() : null"
@@ -52,7 +83,17 @@
             <input
               id="socketio-path"
               v-model="path"
-              class="flex flex-1 w-full px-4 py-2 border rounded-r bg-primaryLight border-divider text-secondaryDark"
+              class="
+                flex flex-1
+                w-full
+                px-4
+                py-2
+                border
+                rounded-r
+                bg-primaryLight
+                border-divider
+                text-secondaryDark
+              "
               spellcheck="false"
               :disabled="connectionState"
               @keyup.enter="urlValid ? toggleConnection() : null"
@@ -72,7 +113,18 @@
         </div>
       </div>
       <div
-        class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperPrimaryStickyFold"
+        class="
+          sticky
+          z-10
+          flex
+          items-center
+          justify-between
+          pl-4
+          border-b
+          bg-primary
+          border-dividerLight
+          top-upperPrimaryStickyFold
+        "
       >
         <span class="flex items-center">
           <label class="font-semibold text-secondaryLight">
@@ -152,12 +204,25 @@
       </div>
       <div
         v-if="authType === 'None'"
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/login.svg`"
+          :src="`./images/states/${$colorMode.value}/login.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="$t('empty.authorization')"
         />
         <span class="pb-4 text-center">
@@ -183,7 +248,17 @@
           </div>
         </div>
         <div
-          class="sticky h-full p-4 overflow-auto bg-primary top-upperTertiaryStickyFold min-w-46 max-w-1/3 z-9"
+          class="
+            sticky
+            h-full
+            p-4
+            overflow-auto
+            bg-primary
+            top-upperTertiaryStickyFold
+            min-w-46
+            max-w-1/3
+            z-9
+          "
         >
           <div class="p-2">
             <div class="pb-2 text-secondaryLight">

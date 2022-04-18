@@ -1,7 +1,19 @@
 <template>
   <div>
     <div
-      class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperMobileRawStickyFold sm:top-upperMobileRawTertiaryStickyFold"
+      class="
+        sticky
+        z-10
+        flex
+        items-center
+        justify-between
+        pl-4
+        border-b
+        bg-primary
+        border-dividerLight
+        top-upperMobileRawStickyFold
+        sm:top-upperMobileRawTertiaryStickyFold
+      "
     >
       <label class="font-semibold text-secondaryLight">
         {{ $t("request.body") }}
@@ -40,7 +52,14 @@
       <div
         v-for="(param, index) in workingParams"
         :key="`param-${index}`"
-        class="flex border-b divide-x divide-dividerLight border-dividerLight draggable-content group"
+        class="
+          flex
+          border-b
+          divide-x divide-dividerLight
+          border-dividerLight
+          draggable-content
+          group
+        "
       >
         <span>
           <ButtonSecondary
@@ -96,7 +115,25 @@
               :name="`attachment${index}`"
               type="file"
               multiple
-              class="p-1 cursor-pointer transition file:transition file:cursor-pointer text-secondaryLight hover:text-secondaryDark file:mr-2 file:py-1 file:px-4 file:rounded file:border-0 file:text-tiny text-tiny file:text-secondary hover:file:text-secondaryDark file:bg-primaryLight hover:file:bg-primaryDark"
+              class="
+                p-1
+                cursor-pointer
+                transition
+                file:transition file:cursor-pointer
+                text-secondaryLight
+                hover:text-secondaryDark
+                file:mr-2
+                file:py-1
+                file:px-4
+                file:rounded
+                file:border-0
+                file:text-tiny
+                text-tiny
+                file:text-secondary
+                hover:file:text-secondaryDark
+                file:bg-primaryLight
+                hover:file:bg-primaryDark
+              "
               @change="setRequestAttachment(index, param, $event)"
             />
           </label>
@@ -145,7 +182,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/upload_single_file.svg`"
+        :src="`./images/states/${$colorMode.value}/upload_single_file.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${$t('empty.body')}`"

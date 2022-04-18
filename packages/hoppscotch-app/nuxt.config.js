@@ -347,6 +347,7 @@ export default {
 
   // Router configuration (https://nuxtjs.org/api/configuration-router)
   router: {
+    base: '/hoppscotch',
     linkActiveClass: "active-link",
     linkExactActiveClass: "exact-active-link",
   },

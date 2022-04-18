@@ -30,12 +30,25 @@
           subscriptionFields.length === 0 &&
           graphqlTypes.length === 0
         "
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/add_comment.svg`"
+          :src="`./images/states/${$colorMode.value}/add_comment.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="`${t('empty.documentation')}`"
         />
         <span class="mb-4 text-center">
@@ -129,7 +142,18 @@
     <SmartTab :id="'schema'" icon="box" :label="`${t('tab.schema')}`">
       <div
         v-if="schemaString"
-        class="sticky top-0 z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight"
+        class="
+          sticky
+          top-0
+          z-10
+          flex
+          items-center
+          justify-between
+          pl-4
+          border-b
+          bg-primary
+          border-dividerLight
+        "
       >
         <label class="font-semibold text-secondaryLight">
           {{ t("graphql.schema") }}
@@ -172,12 +196,25 @@
       ></div>
       <div
         v-else
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/blockchain.svg`"
+          :src="`./images/states/${$colorMode.value}/blockchain.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="`${t('empty.schema')}`"
         />
         <span class="mb-4 text-center">

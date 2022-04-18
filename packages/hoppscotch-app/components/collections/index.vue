@@ -1,7 +1,16 @@
 <template>
   <div :class="{ 'rounded border border-divider': saveRequest }">
     <div
-      class="sticky z-10 flex flex-col border-b rounded-t divide-y divide-dividerLight bg-primary border-dividerLight"
+      class="
+        sticky
+        z-10
+        flex flex-col
+        border-b
+        rounded-t
+        divide-y divide-dividerLight
+        bg-primary
+        border-dividerLight
+      "
       :style="saveRequest ? 'top: calc(-1 * var(--font-size-body))' : 'top: 0'"
     >
       <div v-if="!saveRequest" class="flex flex-col">
@@ -107,7 +116,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/pack.svg`"
+        :src="`./images/states/${$colorMode.value}/pack.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="$t('empty.collections')"

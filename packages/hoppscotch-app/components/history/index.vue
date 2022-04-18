@@ -36,10 +36,28 @@
         open
       >
         <summary
-          class="flex items-center justify-between flex-1 min-w-0 transition cursor-pointer focus:outline-none text-secondaryLight text-tiny group"
+          class="
+            flex
+            items-center
+            justify-between
+            flex-1
+            min-w-0
+            transition
+            cursor-pointer
+            focus:outline-none
+            text-secondaryLight text-tiny
+            group
+          "
         >
           <span
-            class="px-4 py-2 truncate transition group-hover:text-secondary capitalize-first"
+            class="
+              px-4
+              py-2
+              truncate
+              transition
+              group-hover:text-secondary
+              capitalize-first
+            "
           >
             {{ filteredHistoryGroupIndex }}
           </span>
@@ -82,7 +100,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/history.svg`"
+        :src="`./images/states/${$colorMode.value}/history.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="`${t('empty.history')}`"

@@ -44,7 +44,18 @@
         </div>
         <div
           v-if="evnExpandError"
-          class="w-full px-4 py-2 mb-2 overflow-auto font-mono text-red-400 whitespace-normal rounded bg-primaryLight"
+          class="
+            w-full
+            px-4
+            py-2
+            mb-2
+            overflow-auto
+            font-mono
+            text-red-400
+            whitespace-normal
+            rounded
+            bg-primaryLight
+          "
         >
           {{ $t("environment.nested_overflow") }}
         </div>
@@ -79,12 +90,25 @@
           </div>
           <div
             v-if="vars.length === 0"
-            class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+            class="
+              flex flex-col
+              items-center
+              justify-center
+              p-4
+              text-secondaryLight
+            "
           >
             <img
-              :src="`/images/states/${$colorMode.value}/blockchain.svg`"
+              :src="`./images/states/${$colorMode.value}/blockchain.svg`"
               loading="lazy"
-              class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+              class="
+                inline-flex
+                flex-col
+                object-contain object-center
+                w-16
+                h-16
+                my-4
+              "
               :alt="`${$t('empty.environments')}`"
             />
             <span class="pb-4 text-center">

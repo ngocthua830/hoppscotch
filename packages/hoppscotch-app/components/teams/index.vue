@@ -12,12 +12,25 @@
       </div>
       <div
         v-if="!loading && myTeams.length === 0"
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/add_group.svg`"
+          :src="`./images/states/${$colorMode.value}/add_group.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 mb-8"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            mb-8
+          "
           :alt="`${t('empty.teams')}`"
         />
         <span class="mb-4 text-center">

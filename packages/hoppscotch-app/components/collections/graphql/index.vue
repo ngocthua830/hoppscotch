@@ -1,7 +1,15 @@
 <template>
   <div :class="{ 'rounded border border-divider': savingMode }">
     <div
-      class="sticky top-0 z-10 flex flex-col border-b divide-dividerLight divide-y border-dividerLight"
+      class="
+        sticky
+        top-0
+        z-10
+        flex flex-col
+        border-b
+        divide-dividerLight divide-y
+        border-dividerLight
+      "
       :class="{ 'bg-primary': !savingMode }"
     >
       <input
@@ -62,7 +70,7 @@
       class="flex flex-col items-center justify-center p-4 text-secondaryLight"
     >
       <img
-        :src="`/images/states/${$colorMode.value}/pack.svg`"
+        :src="`./images/states/${$colorMode.value}/pack.svg`"
         loading="lazy"
         class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
         :alt="$t('empty.collections')"

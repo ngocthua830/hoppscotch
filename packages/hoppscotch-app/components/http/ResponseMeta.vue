@@ -1,10 +1,27 @@
 <template>
   <div
-    class="sticky top-0 z-10 flex items-start p-4 overflow-auto bg-primary hide-scrollbar whitespace-nowrap"
+    class="
+      sticky
+      top-0
+      z-10
+      flex
+      items-start
+      p-4
+      overflow-auto
+      bg-primary
+      hide-scrollbar
+      whitespace-nowrap
+    "
   >
     <div
       v-if="response == null"
-      class="flex flex-col items-center justify-center flex-1 text-secondaryLight"
+      class="
+        flex flex-col
+        items-center
+        justify-center
+        flex-1
+        text-secondaryLight
+      "
     >
       <div class="flex pb-4 my-4 space-x-2">
         <div class="flex flex-col items-end text-right space-y-4">
@@ -60,16 +77,29 @@
         class="flex flex-col items-center justify-center flex-1 p-4"
       >
         <img
-          :src="`/images/states/${$colorMode.value}/youre_lost.svg`"
+          :src="`./images/states/${$colorMode.value}/youre_lost.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-32 h-32 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-32
+            h-32
+            my-4
+          "
           :alt="`${t('error.network_fail')}`"
         />
         <span class="mb-2 font-semibold text-center">
           {{ t("error.network_fail") }}
         </span>
         <span
-          class="max-w-sm mb-6 text-center whitespace-normal text-secondaryLight"
+          class="
+            max-w-sm
+            mb-6
+            text-center
+            whitespace-normal
+            text-secondaryLight
+          "
         >
           {{ t("helpers.network_fail") }}
         </span>
@@ -80,21 +110,44 @@
         class="flex flex-col items-center justify-center flex-1 p-4"
       >
         <img
-          :src="`/images/states/${$colorMode.value}/youre_lost.svg`"
+          :src="`./images/states/${$colorMode.value}/youre_lost.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-32 h-32 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-32
+            h-32
+            my-4
+          "
           :alt="`${t('error.script_fail')}`"
         />
         <span class="mb-2 font-semibold text-center">
           {{ t("error.script_fail") }}
         </span>
         <span
-          class="max-w-sm mb-6 text-center whitespace-normal text-secondaryLight"
+          class="
+            max-w-sm
+            mb-6
+            text-center
+            whitespace-normal
+            text-secondaryLight
+          "
         >
           {{ t("helpers.script_fail") }}
         </span>
         <div
-          class="w-full px-4 py-2 overflow-auto font-mono text-red-400 whitespace-normal rounded bg-primaryLight"
+          class="
+            w-full
+            px-4
+            py-2
+            overflow-auto
+            font-mono
+            text-red-400
+            whitespace-normal
+            rounded
+            bg-primaryLight
+          "
         >
           {{ response.error.name }}: {{ response.error.message }}<br />
           {{ response.error.stack }}

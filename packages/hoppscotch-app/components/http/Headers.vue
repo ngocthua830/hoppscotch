@@ -1,7 +1,19 @@
 <template>
   <div class="flex flex-col flex-1">
     <div
-      class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperMobileSecondaryStickyFold sm:top-upperSecondaryStickyFold"
+      class="
+        sticky
+        z-10
+        flex
+        items-center
+        justify-between
+        pl-4
+        border-b
+        bg-primary
+        border-dividerLight
+        top-upperMobileSecondaryStickyFold
+        sm:top-upperSecondaryStickyFold
+      "
     >
       <label class="font-semibold text-secondaryLight">
         {{ t("request.header_list") }}
@@ -50,7 +62,14 @@
         <div
           v-for="(header, index) in workingHeaders"
           :key="`header-${header.id}-${index}`"
-          class="flex border-b divide-x divide-dividerLight border-dividerLight draggable-content group"
+          class="
+            flex
+            border-b
+            divide-x divide-dividerLight
+            border-dividerLight
+            draggable-content
+            group
+          "
         >
           <span>
             <ButtonSecondary
@@ -140,12 +159,25 @@
       </draggable>
       <div
         v-if="workingHeaders.length === 0"
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/add_category.svg`"
+          :src="`./images/states/${$colorMode.value}/add_category.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="`${t('empty.headers')}`"
         />
         <span class="pb-4 text-center">{{ t("empty.headers") }}</span>

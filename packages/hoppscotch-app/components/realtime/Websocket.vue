@@ -2,13 +2,32 @@
   <AppPaneLayout>
     <template #primary>
       <div
-        class="sticky top-0 z-10 flex flex-shrink-0 p-4 overflow-x-auto space-x-2 bg-primary hide-scrollbar"
+        class="
+          sticky
+          top-0
+          z-10
+          flex flex-shrink-0
+          p-4
+          overflow-x-auto
+          space-x-2
+          bg-primary
+          hide-scrollbar
+        "
       >
         <div class="inline-flex flex-1 space-x-2">
           <input
             id="websocket-url"
             v-model="url"
-            class="w-full px-4 py-2 border rounded bg-primaryLight border-divider text-secondaryDark"
+            class="
+              w-full
+              px-4
+              py-2
+              border
+              rounded
+              bg-primaryLight
+              border-divider
+              text-secondaryDark
+            "
             type="url"
             autocomplete="off"
             spellcheck="false"
@@ -31,7 +50,18 @@
         </div>
       </div>
       <div
-        class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperPrimaryStickyFold"
+        class="
+          sticky
+          z-10
+          flex
+          items-center
+          justify-between
+          pl-4
+          border-b
+          bg-primary
+          border-dividerLight
+          top-upperPrimaryStickyFold
+        "
       >
         <label class="font-semibold text-secondaryLight">
           {{ $t("websocket.protocols") }}
@@ -63,7 +93,14 @@
         <div
           v-for="(protocol, index) of protocols"
           :key="`protocol-${index}`"
-          class="flex border-b divide-x divide-dividerLight border-dividerLight draggable-content group"
+          class="
+            flex
+            border-b
+            divide-x divide-dividerLight
+            border-dividerLight
+            draggable-content
+            group
+          "
         >
           <span>
             <ButtonSecondary
@@ -129,12 +166,25 @@
       </draggable>
       <div
         v-if="protocols.length === 0"
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/add_category.svg`"
+          :src="`./images/states/${$colorMode.value}/add_category.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="$t('empty.protocols')"
         />
         <span class="mb-4 text-center">

@@ -1,7 +1,19 @@
 <template>
   <div class="flex flex-col flex-1">
     <div
-      class="sticky z-10 flex items-center justify-between pl-4 border-b bg-primary border-dividerLight top-upperMobileRawStickyFold sm:top-upperMobileRawTertiaryStickyFold"
+      class="
+        sticky
+        z-10
+        flex
+        items-center
+        justify-between
+        pl-4
+        border-b
+        bg-primary
+        border-dividerLight
+        top-upperMobileRawStickyFold
+        sm:top-upperMobileRawTertiaryStickyFold
+      "
     >
       <label class="font-semibold text-secondaryLight">
         {{ t("request.body") }}
@@ -50,7 +62,14 @@
         <div
           v-for="(param, index) in workingUrlEncodedParams"
           :key="`param-${param.id}-${index}`"
-          class="flex border-b divide-x divide-dividerLight border-dividerLight draggable-content group"
+          class="
+            flex
+            border-b
+            divide-x divide-dividerLight
+            border-dividerLight
+            draggable-content
+            group
+          "
         >
           <span>
             <ButtonSecondary
@@ -128,12 +147,25 @@
       </draggable>
       <div
         v-if="workingUrlEncodedParams.length === 0"
-        class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+        class="
+          flex flex-col
+          items-center
+          justify-center
+          p-4
+          text-secondaryLight
+        "
       >
         <img
-          :src="`/images/states/${$colorMode.value}/add_category.svg`"
+          :src="`./images/states/${$colorMode.value}/add_category.svg`"
           loading="lazy"
-          class="inline-flex flex-col object-contain object-center w-16 h-16 my-4"
+          class="
+            inline-flex
+            flex-col
+            object-contain object-center
+            w-16
+            h-16
+            my-4
+          "
           :alt="`${t('empty.body')}`"
         />
         <span class="pb-4 text-center">

@@ -12,7 +12,15 @@
           </p>
         </div>
         <div
-          class="flex flex-col p-4 mt-8 border rounded space-y-6 border-dividerLight"
+          class="
+            flex flex-col
+            p-4
+            mt-8
+            border
+            rounded
+            space-y-6
+            border-dividerLight
+          "
         >
           <div
             v-for="(invitee, index) in sendInvitesResult"
@@ -70,14 +78,26 @@
               >
                 <input
                   v-if="invitee"
-                  class="flex flex-1 px-4 py-2 bg-transparent text-secondaryLight"
+                  class="
+                    flex flex-1
+                    px-4
+                    py-2
+                    bg-transparent
+                    text-secondaryLight
+                  "
                   :placeholder="`${t('team.email')}`"
                   :name="'param' + index"
                   :value="invitee.inviteeEmail"
                   readonly
                 />
                 <input
-                  class="flex flex-1 px-4 py-2 bg-transparent text-secondaryLight"
+                  class="
+                    flex flex-1
+                    px-4
+                    py-2
+                    bg-transparent
+                    text-secondaryLight
+                  "
                   :placeholder="`${t('team.permissions')}`"
                   :name="'value' + index"
                   :value="invitee.inviteeRole"
@@ -100,7 +120,13 @@
                 E.isRight(pendingInvites.data) &&
                 pendingInvites.data.right.team.teamInvitations.length === 0
               "
-              class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+              class="
+                flex flex-col
+                items-center
+                justify-center
+                p-4
+                text-secondaryLight
+              "
             >
               <span class="text-center">
                 {{ t("empty.pending_invites") }}
@@ -152,7 +178,13 @@
                 <template #trigger>
                   <span class="select-wrapper">
                     <input
-                      class="flex flex-1 px-4 py-2 bg-transparent cursor-pointer"
+                      class="
+                        flex flex-1
+                        px-4
+                        py-2
+                        bg-transparent
+                        cursor-pointer
+                      "
                       :placeholder="`${t('team.permissions')}`"
                       :name="'value' + index"
                       :value="invitee.value"
@@ -222,12 +254,25 @@
           </div>
           <div
             v-if="newInvites.length === 0"
-            class="flex flex-col items-center justify-center p-4 text-secondaryLight"
+            class="
+              flex flex-col
+              items-center
+              justify-center
+              p-4
+              text-secondaryLight
+            "
           >
             <img
-              :src="`/images/states/${$colorMode.value}/add_group.svg`"
+              :src="`./images/states/${$colorMode.value}/add_group.svg`"
               loading="lazy"
-              class="inline-flex flex-col object-contain object-center w-16 h-16 mb-4"
+              class="
+                inline-flex
+                flex-col
+                object-contain object-center
+                w-16
+                h-16
+                mb-4
+              "
               :alt="`${t('empty.invites')}`"
             />
             <span class="pb-4 text-center">
@@ -242,10 +287,31 @@
         </div>
         <div
           v-if="newInvites.length"
-          class="flex flex-col items-start px-4 py-4 mt-4 border rounded border-dividerLight"
+          class="
+            flex flex-col
+            items-start
+            px-4
+            py-4
+            mt-4
+            border
+            rounded
+            border-dividerLight
+          "
         >
           <span
-            class="flex items-center justify-center px-2 py-1 mb-4 font-semibold border rounded-full bg-primaryDark border-divider"
+            class="
+              flex
+              items-center
+              justify-center
+              px-2
+              py-1
+              mb-4
+              font-semibold
+              border
+              rounded-full
+              bg-primaryDark
+              border-divider
+            "
           >
             <i class="mr-2 text-secondaryLight material-icons">help_outline</i>
             {{ t("profile.roles") }}
@@ -258,7 +324,14 @@
           <ul class="mt-4 space-y-4">
             <li class="flex">
               <span
-                class="w-1/4 font-semibold uppercase truncate text-secondaryDark max-w-16"
+                class="
+                  w-1/4
+                  font-semibold
+                  uppercase
+                  truncate
+                  text-secondaryDark
+                  max-w-16
+                "
               >
                 {{ t("profile.owner") }}
               </span>
@@ -268,7 +341,14 @@
             </li>
             <li class="flex">
               <span
-                class="w-1/4 font-semibold uppercase truncate text-secondaryDark max-w-16"
+                class="
+                  w-1/4
+                  font-semibold
+                  uppercase
+                  truncate
+                  text-secondaryDark
+                  max-w-16
+                "
               >
                 {{ t("profile.editor") }}
               </span>
@@ -278,7 +358,14 @@
             </li>
             <li class="flex">
               <span
-                class="w-1/4 font-semibold uppercase truncate text-secondaryDark max-w-16"
+                class="
+                  w-1/4
+                  font-semibold
+                  uppercase
+                  truncate
+                  text-secondaryDark
+                  max-w-16
+                "
               >
                 {{ t("profile.viewer") }}
               </span>
