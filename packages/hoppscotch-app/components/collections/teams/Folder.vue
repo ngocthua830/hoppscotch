@@ -138,7 +138,7 @@
                 :shortcut="['⌫']"
                 @click.native="
                   () => {
-                    confirmRemove = true
+                    removeFolder()
                     options.tippy().hide()
                   }
                 "
@@ -182,7 +182,8 @@
           @update-team-collections="$emit('update-team-collections')"
           @select="$emit('select', $event)"
           @expand-collection="expandCollection"
-          @remove-request="removeRequest"
+          @remove-request="$emit('remove-request', $event)"
+          @remove-folder="$emit('remove-folder', $event)"
           @duplicate-request="$emit('duplicate-request', $event)"
         />
         <CollectionsTeamsRequest
@@ -200,7 +201,7 @@
           :collection-i-d="folder.id"
           @edit-request="$emit('edit-request', $event)"
           @select="$emit('select', $event)"
-          @remove-request="removeRequest"
+          @remove-request="$emit('remove-request', $event)"
           @duplicate-request="$emit('duplicate-request', $event)"
         />
         <div
@@ -242,20 +243,12 @@
         </div>
       </div>
     </div>
-    <SmartConfirmModal
-      :show="confirmRemove"
-      :title="$t('confirm.remove_folder')"
-      @hide-modal="confirmRemove = false"
-      @resolve="removeFolder"
-    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@nuxtjs/composition-api"
 import * as E from "fp-ts/Either"
-import { runMutation } from "~/helpers/backend/GQLClient"
-import { DeleteCollectionDocument } from "~/helpers/backend/graphql"
 import {
   getCompleteCollectionTree,
   teamCollToHoppRESTColl,
@@ -292,7 +285,6 @@ export default defineComponent({
     return {
       showChildren: false,
       dragging: false,
-      confirmRemove: false,
       prevCursor: "",
       cursor: "",
     }
@@ -363,30 +355,10 @@ export default defineComponent({
       this.showChildren = !this.showChildren
     },
     removeFolder() {
-      if (this.collectionsType.selectedTeam.myRole !== "VIEWER") {
-        // Cancel pick if picked collection folder was deleted
-        if (
-          this.picked &&
-          this.picked.pickedType === "teams-folder" &&
-          this.picked.folderID === this.folder.id
-        ) {
-          this.$emit("select", { picked: null })
-        }
-
-        runMutation(DeleteCollectionDocument, {
-          collectionID: this.folder.id,
-        })().then((result) => {
-          if (E.isLeft(result)) {
-            this.$toast.error(`${this.$t("error.something_went_wrong")}`)
-            console.error(result.left)
-          } else {
-            this.$toast.success(`${this.$t("state.deleted")}`)
-            this.$emit("update-team-collections")
-          }
-        })
-
-        this.$emit("update-team-collections")
-      }
+      this.$emit("remove-folder", {
+        collectionsType: this.collectionsType,
+        folder: this.folder,
+      })
     },
     expandCollection(collectionID: number) {
       this.$emit("expand-collection", collectionID)
@@ -400,13 +372,6 @@ export default defineComponent({
       )()
       if (E.isLeft(moveRequestResult))
         this.$toast.error(`${this.$t("error.something_went_wrong")}`)
-    },
-    removeRequest({ collectionIndex, folderName, requestIndex }: any) {
-      this.$emit("remove-request", {
-        collectionIndex,
-        folderName,
-        requestIndex,
-      })
     },
   },
 })

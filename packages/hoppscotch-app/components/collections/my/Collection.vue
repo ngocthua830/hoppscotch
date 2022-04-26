@@ -166,7 +166,7 @@
                 :shortcut="['⌫']"
                 @click.native="
                   () => {
-                    confirmRemove = true
+                    removeCollection()
                     options.tippy().hide()
                   }
                 "
@@ -210,6 +210,7 @@
           @duplicate-request="$emit('duplicate-request', $event)"
           @select="$emit('select', $event)"
           @remove-request="$emit('remove-request', $event)"
+          @remove-folder="$emit('remove-folder', $event)"
         />
         <CollectionsMyRequest
           v-for="(request, index) in collection.requests"
@@ -263,12 +264,6 @@
         </div>
       </div>
     </div>
-    <SmartConfirmModal
-      :show="confirmRemove"
-      :title="$t('confirm.remove_collection')"
-      @hide-modal="confirmRemove = false"
-      @resolve="removeCollection"
-    />
   </div>
 </template>
 
@@ -303,7 +298,6 @@ export default defineComponent({
       showChildren: false,
       dragging: false,
       selectedFolder: {},
-      confirmRemove: false,
       prevCursor: "",
       cursor: "",
       pageNo: 0,
@@ -356,7 +350,6 @@ export default defineComponent({
     },
     removeCollection() {
       this.$emit("remove-collection", {
-        collectionsType: this.collectionsType,
         collectionIndex: this.collectionIndex,
         collectionID: this.collection.id,
       })
