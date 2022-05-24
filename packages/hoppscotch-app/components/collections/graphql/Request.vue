@@ -174,8 +174,9 @@ export default defineComponent({
       })
     },
     selectRequest() {
+      console.log("thua3");
       if (this.savingMode) {
-        this.pick()
+        this.pick();
       } else {
         setGQLSession({
           request: cloneDeep(
@@ -190,14 +191,14 @@ export default defineComponent({
           ),
           schema: "",
           response: "",
-        })
+        });
       }
     },
     dragStart({ dataTransfer }: any) {
       this.dragging = !this.dragging
 
-      dataTransfer.setData("folderPath", this.folderPath)
-      dataTransfer.setData("requestIndex", this.requestIndex)
+      dataTransfer.setData("folderPath", this.folderPath);
+      dataTransfer.setData("requestIndex", this.requestIndex);
     },
     removeRequest() {
       // Cancel pick if the picked request is deleted
@@ -210,8 +211,8 @@ export default defineComponent({
         this.$emit("select", { picked: null })
       }
 
-      removeGraphqlRequest(this.folderPath, this.requestIndex)
-      this.$toast.success(`${this.$t("state.deleted")}`)
+      removeGraphqlRequest(this.folderPath, this.requestIndex);
+      this.$toast.success(`${this.$t("state.deleted")}`);
     },
   },
 })

@@ -323,9 +323,9 @@ const setRestReq = (request: any) => {
 }
 
 const selectRequest = () => {
+  console.log("thua");
   if (!active.value) {
-    confirmChange.value = true
-
+    confirmChange.value = true;
     if (props.saveRequest)
       emit("select", {
         picked: {
@@ -335,16 +335,16 @@ const selectRequest = () => {
           folderName: props.folderName,
           requestIndex: props.requestIndex,
         },
-      })
+      });
   } else {
-    const currentReqWithNoChange = active.value.req
-    const currentFullReq = getRESTRequest()
+    const currentReqWithNoChange = active.value.req;
+    const currentFullReq = getRESTRequest();
 
     // Check if whether user clicked the same request or not
     if (!isActive.value && currentReqWithNoChange !== undefined) {
       // Check if there is any changes done on the current request
       if (isEqualHoppRESTRequest(currentReqWithNoChange, currentFullReq)) {
-        setRestReq(props.request)
+        setRestReq(props.request);
         if (props.saveRequest)
           emit("select", {
             picked: {
@@ -354,12 +354,12 @@ const selectRequest = () => {
               folderName: props.folderName,
               requestIndex: props.requestIndex,
             },
-          })
+          });
       } else {
-        confirmChange.value = true
+        confirmChange.value = true;
       }
     } else {
-      setRESTSaveContext(null)
+      setRESTSaveContext(null);
     }
   }
 }
